@@ -32,4 +32,11 @@ public class MyController {
         return repository.findAll();
     }
 
+    @GetMapping("/delete")
+    public @ResponseBody String deletePizza(@RequestParam Integer id) {
+        repository.deleteById(id);
+        return "Deleted!";
+    }
+
+
 }
